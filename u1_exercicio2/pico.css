@@ -1,0 +1,12 @@
+#nome{width: 400px;}
+#email{width: 400px;}
+#data{width: 400px;}
+#nome1{display: inline-block;}
+#email1{display: inline-block;}
+#data1 {display: inline-block;}
+#reset1 { width: 500px; display: inline-block;}
+#texto {text-align: center;}
+#enviar{width: 500px; grid;}
+#for1{padding: 20px ;}
+#enviar{text-decoration: underline; color:}
+		
