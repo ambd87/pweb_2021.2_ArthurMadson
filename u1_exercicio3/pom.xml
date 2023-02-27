@@ -8,11 +8,11 @@
 		<version>2.7.9-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.arthur.cadpessoas</groupId>
+	<groupId>br.com.xico.cadpessoas</groupId>
 	<artifactId>cadpessoas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cadpessoas</name>
-	<description>Cadastro de Pessoas - PWeb 2022.2 by Arthur</description>
+	<description>Cadastro de Pessoas - PWeb 2022.2 by Xico</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
