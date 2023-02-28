@@ -1,0 +1,60 @@
+<!-- O nome desse arquivo está errado -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWeb - by Xico Arruda</title> <!-- Falta mudar para o seu nome-->
+	<!-- Falta o favicon -->
+	<!-- Esses links devem ser locais, de arquivos da pasta assets, e não das CDNs -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+	<link rel="stylesheet" href="C:\github\page\tpico.css">
+	<!-- Esse tipo de referência absoluta não funciona quado usado servidor -->
+</head>
+
+<body>
+    
+    <div class="w3-bar w3-black w3-xlarge">          
+    <a href="index.html" class=" w3-bar-item w3-button w3-mobile"> Início </a>
+	<a href="adicionapessoa.html" class=" w3-bar-item w3-button w3-mobile w3-red"> Adicionar pessoa </a>
+	<a href="listarpessoas.html" class=" w3-bar-item w3-button w3-mobile"> Listar pessoas </a>
+	<a href="contato.html" class=" w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
+	<a href="sobre.html" class=" w3-bar-item w3-button w3-mobile w3-right"> Sobre o site </a>
+	<a href="noticias.html" class="w3-bar-item w3-button w3-mobile w3-right"> Noticías </a>
+	
+	</div>
+	<h1>Formulário para adicionar pessoas:</h1>
+	
+	<form name="formulario1" action="C:\github\page\adicionadacomsucesso.html" method="GET">
+	
+			<label id="nome1">Seu nomezinho*:</label>
+			<input type="text" placeholder="Nome Completo" id="nome" required>
+			<label id="email1">e-Mail*:</label>
+			<input type="text"placeholder="nome@dominio.com" id="email" required >
+			<label id="data1"> Data de Nascimento*: </label>
+			<input type="date" placeholder="dd/mm/aa" id="data" required>
+			<label id="texto"> Nunca divulgaremos :) </label>
+			
+		<div id="for1">
+			
+			<label>Gênero*</label>
+			<input type="radio" name="selecionar" required> Masculino
+			<br>
+			<input type="radio" name="selecionar" required> Feminino
+			<br>
+			<input type="radio" name="selecionar" required> Não informar
+			<br>
+			<br>
+			<input type="submit" value="Adicionar!" id="enviar">
+			<input type="reset" value="Limpar" id="reset1">
+			<br>
+			<label> * Campo obrigatório </label>
+			
+		</div>	
+			
+	</form>
+
+</body>
+</html>
