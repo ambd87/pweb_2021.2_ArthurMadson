@@ -1,18 +1,14 @@
-br.com.arthur.controllers;
-
+package br.com.arthur.cadpessoas.controllers;
 
 @Controller
 @RequestMapping("/")
+class PessoaController {
 
-class PessoaController{
-	
-	//raiz do site localhost:8080/
-	
+	// raiz do site localhost:8080/
 	@GetMapping
 	public String index(){
-		
 		return "index.html"
 		
 	}
-	
+
 }
