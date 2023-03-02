@@ -1,5 +1,9 @@
 package br.com.arthur.cadpessoas.repositories;
 
-public class PessoaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+@Repository
+public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
+
 
 }
