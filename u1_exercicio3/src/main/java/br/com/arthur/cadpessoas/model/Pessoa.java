@@ -1,14 +1,14 @@
 package br.com.arthur.cadpessoas.model;
 
-import java.io.Serialzable;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-import java.persistence.Column;
-import java.persistence.Entity;
-import java.persistence.GeneratedValue;
-import java.persistence.GenerationType;
-import java.persistence.Id;
-import java.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,18 +21,20 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "pessoas")
-
 public class Pessoa implements Serializable {
-	
+
+	private static final long serialVersionUID = 8128389568127787766L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
+	private Long id;
+
 	private String nome;
 	private String email;
 	private String genero;
-	
+
 	@Column(nullable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataNascimento;
+
 }
