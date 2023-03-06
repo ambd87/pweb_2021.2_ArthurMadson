@@ -21,7 +21,6 @@ public class PessoaController {
 
 	public PessoaController(PessoaRepository pessoaRepo) {
 		this.pessoaRepo = pessoaRepo;
-
 	}
 
 	@GetMapping
@@ -32,29 +31,23 @@ public class PessoaController {
 
 	@GetMapping("/listarPessoas")
 	public ModelAndView listarPessoas() {
-
 		List<Pessoa> todasAsPessoas = pessoaRepo.findAll();
 		ModelAndView modelAndView = new ModelAndView("listarPessoas");
 		modelAndView.addObject("todasAsPessoas", todasAsPessoas);
-
 		return modelAndView;
-
 	}
 
 	@GetMapping("/adicionarPessoas")
 	public ModelAndView formularioAdicionarPessoas() {
-
 		List<Pessoa> todasAsPessoas = pessoaRepo.findAll();
 		ModelAndView modelAndView = new ModelAndView("adicionarPessoas");
 		modelAndView.addObject(new Pessoa());
 		return modelAndView;
-
 	}
 
 	@PostMapping("/adicionarPessoa")
 	public String adicionarPessoa(Pessoa p) {
 		this.pessoaRepo.save(p);
 		return "redirect:/listarPessoas";
-
 	}
 }
