@@ -8,8 +8,6 @@ public interface PessoaRepository {
 	
 		extends jpaRepository<Pessoa, Long>{
 			
-			
-			
-		
 
 }
+	}
