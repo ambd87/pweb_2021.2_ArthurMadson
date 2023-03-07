@@ -51,7 +51,7 @@ public class PessoaController{
 	
 		@PostMapping("/adicionarPessoa")
 			public String adicionarPessoa(Pessoa p){
-				this.pessoaReposave.(p);
+				this.pessoaRepo.save.(p);
 					return "redirect:/listarPessoas";
 			
 			}

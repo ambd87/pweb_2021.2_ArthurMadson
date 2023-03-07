@@ -34,52 +34,35 @@
 	</div>
 	<h1 id="lista"> Lista de pessoas </h1>
 
-	<table>
-		<tr>
-			<td> id </td>
-			<td> Nome Completo</td>
-			<td> e-Mail </td>
-			<td> Data de Nascimento</td>
-			<td> Gênero </td>
-			<td> Editar </td>
-			<td> Remover </td>
+	<div style="padding:0 16px;">
+		<div style="text-align:center;">
+			<h1>Lista de pessoas</h1>
+	</div>
+		<table>
+			<thead>
 
-		</tr>
-
-		<tr>
-			<td> 1 </td>
-			<td> Nome da Primeira Pessoa</td>
-			<td style="color:#40E0D0;"> primeira@primeira.com </td>
-			<td> 10/10/2010</td>
-			<td> Não informado</td>
-			<td style="color:#40E0D0;"> Editar</td>
-			<td style="color:#40E0D0;"> Remover </td>
-
-		</tr>
-
-		<tr>
-			<td> 2 </td>
-			<td> Nome da Segunda Pessoa</td>
-			<td style="color:#40E0D0;"> segunda@segunda.com </td>
-			<td> 10/10/2000</td>
-			<td> Feminino</td>
-			<td style="color:#40E0D0;"> Editar</td>
-			<td style="color:#40E0D0;"> Remover </td>
-
-		</tr>
-
-		<tr>
-			<td> 3 </td>
-			<td> Nome da terceira Pessoa</td>
-			<td style="color:#40E0D0;"> terceira@terceira.com </td>
-			<td> 11/11/2011</td>
-			<td> Masculino</td>
-			<td style="color:#40E0D0;"> Editar</td>
-			<td style="color:#40E0D0;"> Remover </td>
-
-		</tr>
-
-	</table>
-
-
+				<tr>
+						<th>id</th>
+						<th>Nome Completo</th>
+						<th>e-Mail</th>
+						<th>Data de Nascimento</th>
+						<th>Gênero</th>
+						<th>Editar</th>
+						<th>Remover</th>
+				</tr>
+		</thead>
+		<tbody>
+				
+				<tr th:each="umaPessoa: ${todasAsPessoas}">
+				<td th:text="${umaPessoa.id}"></td>
+				<td th:text="${umaPessoa.nome}"></td>
+				<td><a th:href="'mailto:'+${umaPessoa.email}" th:text="${umaPessoa.email}"></a></td>
+				<td th:text="${#temporals.formatumaPessoa.dataNascimento, 'dd/MM/yyyy')}"></td>
+				<td	><a th:text="${umaPessoa.genero}"></a></td>
+				<td><a th:href="@{/editar/{id}(id=${umaPessoa.id})}">Editar</a></td>
+				<td><a th:href="@{/remover/{id}(id=${umaPessoa.id})}">Remover</a></td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
 </body>
