@@ -55,4 +55,11 @@ public class PessoaController{
 					return "redirect:/listarPessoas";
 			
 			}
-}
+
+		@GetMapping("/remover/{id}")
+			public ModelAndView removerPessoa(@PathVariable("id") long id)
+				Pessoa aRemover = pessoaRepo.FindById(id)
+					.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+
+
+		}	
