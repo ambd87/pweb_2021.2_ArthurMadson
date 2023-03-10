@@ -63,3 +63,12 @@ public class PessoaController{
 
 
 		}	
+
+		@GetMapping("/remover/"{id})
+			public ModelAndView removerPessoa(@PathVariable("id") long id){
+				Pessoa aRemover = pessoaRepo.findById(id).orElseThrow
+				(() -> new IllegalArgumentException("ID inválido" + id));
+
+				pessoaRepo.delete(aRemover);
+				return new ModelAndView("redirect:/listarPessoas");
+			}

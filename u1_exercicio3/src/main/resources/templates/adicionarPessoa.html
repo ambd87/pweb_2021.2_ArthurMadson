@@ -43,10 +43,17 @@
 				</div>
 			<fieldset>
 				<legend>Gênero*</legend>
-					<label for="Masculino"> <input type="radio" id="Masculino" nome="genero" value="Masculino" th:field="*{genero}" required />Masculino</label>
-					<label for="Feminino"> <input type="radio" id="Feminino" nome="genero" value="Feminino" th:field="*{genero}" required />Feminino </label>
-					<label for="Não Informado"> <input type="radio" id="Não Informado" nome="genero" value="Não Informado" th:field="*{genero}" required />Não Informado</label>
+					<label for="Masculino"> <input type="radio" id="Masculino" name="genero" value="Masculino" th:field="*{genero}" required />Masculino</label>
+					<label for="Feminino"> <input type="radio" id="Feminino" name="genero" value="Feminino" th:field="*{genero}" required />Feminino </label>
+					<label for="Não Informado"> <input type="radio" id="Não Informado" name="genero" value="Não Informado" th:field="*{genero}" required />Não Informado</label>
 			</fieldset>
+
+			<div class="grid">
+					<div><button type="submit">Adicionar!</button></div>
+					<div><button type="reset" class="secondary">Limpar</button></div>
+			</div>
+			<p>Campo obrigatorio</p>
+
 	</form>
 </body>
 </html>
