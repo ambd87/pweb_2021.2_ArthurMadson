@@ -28,37 +28,25 @@
 		<a href="../static/public/sobre.html" class=" w3-bar-item w3-button w3-mobile w3-right"> Sobre o site </a>
 		<a href="../static/public/noticias.html" class="w3-bar-item w3-button w3-mobile w3-right"> Noticías </a>
 	</div>
-	<h1>Formulário para adicionar pessoas:</h1>
 
-	<form name="formulario1" action="adicionarPessoa" method="GET">
-
-		<label id="nome1">Seu nomezinho*:</label>
-		<input type="text" placeholder="Nome Completo" id="nome" required>
-		<label id="email1">e-Mail*:</label>
-		<input type="text" placeholder="nome@dominio.com" id="email" required>
-		<label id="data1"> Data de Nascimento*: </label>
-		<input type="date" placeholder="dd/mm/aa" id="data" required>
-		<label id="texto"> Nunca divulgaremos :) </label>
-
-		<div id="for1">
-
-			<label>Gênero*</label>
-			<input type="radio" name="genero" required> Masculino
-			<br>
-			<input type="radio" name="genero" required> Feminino
-			<br>
-			<input type="radio" name="genero" required> Não informar
-			<br>
-			<br>
-			<input type="submit" value="Adicionar!" id="enviar">
-			<input type="reset" value="Limpar" id="reset1">
-			<br>
-			<label> * Campo obrigatório </label>
-
-		</div>
-
+	<div style="padding:0 16px;">
+		<h1>Formulário para adicionar pessoas:</h1>
+			<form th:action="@{/adicionarPessoa}" method="POST" th:object="${pessoa}">
+			 	<div class="grid">
+					<label for="nome"> Seu Nomezinho*: <input type="text" id="nome" name="nome" placeholder="Nome Completo"th:field="*{nome}" required> </label>
+					<label for="senha"> Sua senhazia*: <input type="password" id="senha" name="senha" placeholder="senha"th:field="*{senha}" required> </label>
+					<label for="email"> e-Mail*: <input type="email" id="email" name="email" placeholder="nome@dominio.com"th:field="*{email}" required> 
+					<small> Nunca divulgaremos :)</small>
+					</label>
+					<label for="dataNascimento"> Data de Nascimento*: <input type="date" id="dataNascimento" name="dataNascimento" placeholder="dd/MM/aaaa" th:field="*{dataNascimento}" required> </label>
+				</div>			
+				</div>
+			<fieldset>
+				<legend>Gênero*</legend>
+					<label for="Masculino"> <input type="radio" id="Masculino" nome="genero" value="Masculino" th:field="*{genero}" required />Masculino</label>
+					<label for="Feminino"> <input type="radio" id="Feminino" nome="genero" value="Feminino" th:field="*{genero}" required />Feminino </label>
+					<label for="Não Informado"> <input type="radio" id="Não Informado" nome="genero" value="Não Informado" th:field="*{genero}" required />Não Informado</label>
+			</fieldset>
 	</form>
-
 </body>
-
 </html>
