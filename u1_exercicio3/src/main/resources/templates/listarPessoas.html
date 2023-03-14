@@ -22,15 +22,12 @@
 		<a href="/public/sobre.html" class="w3-bar-item w3-button w3-mobile w3-right">Sobre o site</a>
 		<a href="/public/contato.html" class="w3-bar-item w3-button w3-mobile w3-right">Contato</a>
 	</div>
-	<h1 id="lista"> Lista de pessoas </h1>
-
 	<div style="padding:0 16px;">
-		<div style="text-align:center;">
+		<div style="text-align: center;">
 			<h1>Lista de pessoas</h1>
 		</div>
 		<table>
 			<thead>
-
 				<tr>
 					<th>id</th>
 					<th>Nome Completo</th>
@@ -42,17 +39,24 @@
 				</tr>
 			</thead>
 			<tbody>
-
 				<tr th:each="umaPessoa: ${todasAsPessoas}">
 					<td th:text="${umaPessoa.id}"></td>
 					<td th:text="${umaPessoa.nome}"></td>
-					<td><a th:href="'mailto:'+${umaPessoa.email}" th:text="${umaPessoa.email}"></a></td>
-					<td th:text="${#temporals.formatumaPessoa.dataNascimento, 'dd/MM/yyyy')}"></td>
-					<td><a th:text="${umaPessoa.genero}"></a></td>
-					<td><a th:href="@{/editar/{id}(id=${umaPessoa.id})}">Editar</a></td>
-					<td><a th:href="@{/remover/{id}(id=${umaPessoa.id})}">Remover</a></td>
+					<td>
+						<a th:href="'mailto:'+${umaPessoa.email}" th:text="${umaPessoa.email}"></a>
+					</td>
+					<td th:text="${#temporals.format(umaPessoa.dataNascimento,'dd/MM/yyyy')}"></td>
+					<td th:text="${umaPessoa.genero}"></td>
+					<td>
+						<a th:href="@{/editar/{id}(id=${umaPessoa.id})}">Editar</a>
+					</td>
+					<td>
+						<a th:href="@{/remover/{id}(id=${umaPessoa.id})}">Remover</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
-	</div>
+
 </body>
+
+</html>
