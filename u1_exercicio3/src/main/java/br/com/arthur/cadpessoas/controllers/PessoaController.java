@@ -8,10 +8,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
+=======
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.arthur.cadpessoas.model.Pessoa;
+>>>>>>> ab25d50370ddeab4cc7d6f4d75f2fc9b10c75962
 import br.com.arthur.cadpessoas.repositories.PessoaRepository;
+import java.util.List;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation. PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.vweb. servlet.ModelAndView;
+import br.com.arthur.cadpessoas.model.Pessoas;
+import br.com.arthur.cadpessoas.repositories.PessoaRepository;
+
+eController
+ERequestMapping("/")
+public class Pessoacontroller (
+
 
 @Controller
 @RequestMapping("/")
@@ -59,9 +75,9 @@ public class PessoaController {
 	}
 
 	@PostMapping("/editar/{id}")
-	public ModelAndView editarPessoa(@PathVariable("id") long id, Pessoa pessoa) {
-		pessoaRepo.save(pessoa);
-		return new ModelAndView("redirect:/listarPessoas");
+	public String editarPessoa(@PathVariable("id") long id, Pessoa pessoa) {
+		this.pessoaRepo.save(p);
+		return "redirect:/listarPessoas";
 	}
 
 	@GetMapping("/remover/{id}")
