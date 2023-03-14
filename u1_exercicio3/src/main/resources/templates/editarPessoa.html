@@ -22,25 +22,22 @@
 		<a href="/public/sobre.html" class="w3-bar-item w3-button w3-mobile w3-right">Sobre o site</a>
 		<a href="/public/contato.html" class="w3-bar-item w3-button w3-mobile w3-right">Contato</a>
 	</div>
-
-
 	<div style="padding:0 16px;">
-		<h1>Formulário para cadastro de pessoas:</h1>
-		<form method="POST" th:object="${pessoa}" th:action="@{/adicionarPessoa}">
+		<h1>Formulário para edição de pessoas:</h1>
+		<form action="#" th:action="@{/editar/{id}(id=${pessoa.id})}" th:object="${pessoa}" method="POST">
 			<div class="grid">
 				<label for="nomeCompleto">
 					Seu nomezinho *:<input type="text" placeholder="Seu nome completo." th:field="*{nome}" required />
 				</label>
 				<label for="email">
-					e-Mail *: <input type="text" placeholder="nome@dominio.com" th:field="*{email}" required />
+					e-Mail *:
+					<input type="text" placeholder="nome@dominio.com" th:field="*{email}" required />
 				</label>
 				<label for="dataNascimento">
-					Data de nascimento *: <input type="date" placeholder="dd/mm/aaaa" th:field="*{dataNascimento}"
-						required />
+					Data de nascimento *:
+					<input type="date" placeholder="dd/mm/aaaa" th:field="*{dataNascimento}" required />
 				</label>
 			</div>
-
-
 			<legend>Gênero*</legend>
 			<label for="Masculino">
 				<input type="radio" id="Masculino" name="genero" value="Masculino" th:field="*{genero}"
@@ -51,12 +48,12 @@
 					required />Feminino
 			</label>
 			<label for="Não Informado">
-				<input type="radio" id="Não Informado" name="genero" value="Não Informado" th:field="*{genero}"
-					required>Não informar
+				<input type="radio" id="Não Informado" name="genero" value="Não Informado" th:field="*{genero}" required
+					checked>Não informar
 			</label>
 
 			<div class="grid">
-				<div><button type="submit">Adicionar!</button></div>
+				<div><button type="submit">Editar!</button></div>
 				<div><button type="reset" class="secondary">Limpar</button></div>
 			</div>
 			<p>* Campo obrigatório</p>
