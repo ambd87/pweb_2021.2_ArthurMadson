@@ -4,24 +4,19 @@
 
 <head>
 	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Falta mudar para o seu nome-->	
-	<!-- Falta o favicon -->
-	<!-- Esses links devem ser locais, de arquivos da pasta assets, e não das CDNs -->
-	<meta codigoSecreto = "350771480"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta codigoSecreto="350771480">
 	<title>PWeb - by Arthur Madson</title>
-	<link rel="stylesheet" type="text/css" href="../static/assets/w3.css">
-	<link rel="stylesheet" type="text/css" href="../static/assets/pico.min.css">
-	<link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
-	
-	<!-- Esse tipo de referência absoluta não funciona quado usado servidor -->
+	<link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
+	<link th:href="@{/assets/w3.css}" rel="stylesheet" />
+	<link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
 </head>
 
 <body>
 
 	<div class="w3-bar w3-black w3-xlarge">
-		<a href="index.html"class="w3-bar-item w3-button w3-mobile w3-red"> Início </a>
+		<a href="index.html" class="w3-bar-item w3-button w3-mobile w3-red"> Início </a>
 		<a href="adicionarPessoa.html" class=" w3-bar-item w3-button w3-mobile"> Adicionar pessoa </a>
 		<a href="listarPessoas.html" class=" w3-bar-item w3-button w3-mobile"> Listar pessoas </a>
 		<a href="../static/public/contato.html" class=" w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
@@ -31,29 +26,37 @@
 
 	<div style="padding:0 16px;">
 		<h1>Formulário para adicionar pessoas:</h1>
-			<form th:action="@{/adicionarPessoa}" method="POST" th:object="${pessoa}">
-			 	<div class="grid">
-					<label for="nome"> Seu Nomezinho*: <input type="text" id="nome" name="nome" placeholder="Nome Completo"th:field="*{nome}" required> </label>
-					<label for="senha"> Sua senhazia*: <input type="password" id="senha" name="senha" placeholder="senha"th:field="*{senha}" required> </label>
-					<label for="email"> e-Mail*: <input type="email" id="email" name="email" placeholder="nome@dominio.com"th:field="*{email}" required> 
-					<small> Nunca divulgaremos :)</small>
-					</label>
-					<label for="dataNascimento"> Data de Nascimento*: <input type="date" id="dataNascimento" name="dataNascimento" placeholder="dd/MM/aaaa" th:field="*{dataNascimento}" required> </label>
-				</div>			
-				</div>
-			<fieldset>
-				<legend>Gênero*</legend>
-					<label for="Masculino"> <input type="radio" id="Masculino" name="genero" value="Masculino" th:field="*{genero}" required />Masculino</label>
-					<label for="Feminino"> <input type="radio" id="Feminino" name="genero" value="Feminino" th:field="*{genero}" required />Feminino </label>
-					<label for="Não Informado"> <input type="radio" id="Não Informado" name="genero" value="Não Informado" th:field="*{genero}" required />Não Informado</label>
-			</fieldset>
-
+		<form th:action="@{/adicionarPessoa}" method="POST" th:object="${pessoa}">
 			<div class="grid">
-					<div><button type="submit">Adicionar!</button></div>
-					<div><button type="reset" class="secondary">Limpar</button></div>
+				<label for="nome"> Seu Nomezinho*: <input type="text" id="nome" name="nome" placeholder="Nome Completo"
+						th:field="*{nome}" required> </label>
+				<label for="senha"> Sua senhazia*: <input type="password" id="senha" name="senha" placeholder="senha"
+						th:field="*{senha}" required> </label>
+				<label for="email"> e-Mail*: <input type="email" id="email" name="email" placeholder="nome@dominio.com"
+						th:field="*{email}" required>
+					<small> Nunca divulgaremos :)</small>
+				</label>
+				<label for="dataNascimento"> Data de Nascimento*: <input type="date" id="dataNascimento"
+						name="dataNascimento" placeholder="dd/MM/aaaa" th:field="*{dataNascimento}" required> </label>
 			</div>
-			<p>Campo obrigatorio</p>
+	</div>
+	<fieldset>
+		<legend>Gênero*</legend>
+		<label for="Masculino"> <input type="radio" id="Masculino" name="genero" value="Masculino" th:field="*{genero}"
+				required />Masculino</label>
+		<label for="Feminino"> <input type="radio" id="Feminino" name="genero" value="Feminino" th:field="*{genero}"
+				required />Feminino </label>
+		<label for="Não Informado"> <input type="radio" id="Não Informado" name="genero" value="Não Informado"
+				th:field="*{genero}" required />Não Informado</label>
+	</fieldset>
+
+	<div class="grid">
+		<div><button type="submit">Adicionar!</button></div>
+		<div><button type="reset" class="secondary">Limpar</button></div>
+	</div>
+	<p>Campo obrigatorio</p>
 
 	</form>
 </body>
+
 </html>

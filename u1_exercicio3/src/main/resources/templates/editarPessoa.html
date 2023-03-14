@@ -1,0 +1,64 @@
+<!-- O nome desse arquivo está errado -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta codigoSecreto="350771480">
+	<title>PWeb - by Arthur Madson</title>
+	<link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
+	<link th:href="@{/assets/w3.css}" rel="stylesheet" />
+	<link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="w3-bar w3-black w3-xlarge">
+		<a href="/" class="w3-bar-item w3-button w3-mobile">Início</a>
+		<a href="/adicionarPessoa" class="w3-bar-item w3-button">Adicionar pessoa</a>
+		<a href="/listarPessoas" class="w3-bar-item w3-button w3-mobile">Listar pessoas</a>
+		<a href="/public/noticias.html" class="w3-bar-item w3-button w3-mobile w3-right">Notícias</a>
+		<a href="/public/sobre.html" class="w3-bar-item w3-button w3-mobile w3-right">Sobre o site</a>
+		<a href="/public/contato.html" class="w3-bar-item w3-button w3-mobile w3-right">Contato</a>
+	</div>
+	<div style="padding:0 16px;">
+		<h1>Formulário para edição de pessoas:</h1>
+		<form action="#" th:action="@{/editar/{id}(id=${pessoa.id})}" th:object="${pessoa}" method="POST">
+			<div class="grid">
+				<label for="nomeCompleto">
+					Seu nomezinho *:<input type="text" placeholder="Seu nome completo." th:field="*{nome}" required />
+				</label>
+				<label for="email">
+					e-Mail *:
+					<input type="text" placeholder="nome@dominio.com" th:field="*{email}" required />
+				</label>
+				<label for="dataNascimento">
+					Data de nascimento *:
+					<input type="date" placeholder="dd/mm/aaaa" th:field="*{dataNascimento}" required />
+				</label>
+			</div>
+			<legend>Gênero*</legend>
+			<label for="Masculino">
+				<input type="radio" id="Masculino" name="genero" value="Masculino" th:field="*{genero}"
+					required />Masculino
+			</label>
+			<label for="Feminino">
+				<input type="radio" id="Feminino" name="genero" value="Feminino" th:field="*{genero}"
+					required />Feminino
+			</label>
+			<label for="Não Informado">
+				<input type="radio" id="Não Informado" name="genero" value="Não Informado" th:field="*{genero}" required
+					checked>Não informar
+			</label>
+
+			<div class="grid">
+				<div><button type="submit">Editar!</button></div>
+				<div><button type="reset" class="secondary">Limpar</button></div>
+			</div>
+			<p>* Campo obrigatório</p>
+		</form>
+	</div>
+</body>
+
+</html>

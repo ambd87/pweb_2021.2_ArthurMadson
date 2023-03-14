@@ -1,27 +1,22 @@
+<!-- O nome desse arquivo está errado -->
 <!DOCTYPE html>
 <html lang="pt-br">
-	<!--comentarios aqui -->
-	<!-- aqui outro comentario-->
+
 <head>
 	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Falta mudar para o seu nome-->	
-	<!-- Falta o favicon -->
-	<!-- Esses links devem ser locais, de arquivos da pasta assets, e não das CDNs -->
-	<meta codigoSecreto = "350771480"> 
-
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta codigoSecreto="350771480">
 	<title>PWeb - by Arthur Madson</title>
-	<link rel="stylesheet" type="text/css" href="../static/assets/w3.css">
-	<link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="../static/assets/pico.min.css">
-
+	<link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
+	<link th:href="@{/assets/w3.css}" rel="stylesheet" />
+	<link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
 </head>
 
 <body>
 
 	<div class="w3-bar w3-black w3-xlarge">
-		<a href="index.html"class="w3-bar-item w3-button w3-mobile w3-red"> Início </a>
+		<a href="index.html" class="w3-bar-item w3-button w3-mobile w3-red"> Início </a>
 		<a href="adicionarPessoa.html" class=" w3-bar-item w3-button w3-mobile"> Adicionar pessoa </a>
 		<a href="listarPessoas.html" class=" w3-bar-item w3-button w3-mobile"> Listar pessoas </a>
 		<a href="../static/public/contato.html" class=" w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
@@ -33,32 +28,32 @@
 	<div style="padding:0 16px;">
 		<div style="text-align:center;">
 			<h1>Lista de pessoas</h1>
-	</div>
+		</div>
 		<table>
 			<thead>
 
 				<tr>
-						<th>id</th>
-						<th>Nome Completo</th>
-						<th>e-Mail</th>
-						<th>Data de Nascimento</th>
-						<th>Gênero</th>
-						<th>Editar</th>
-						<th>Remover</th>
+					<th>id</th>
+					<th>Nome Completo</th>
+					<th>e-Mail</th>
+					<th>Data de Nascimento</th>
+					<th>Gênero</th>
+					<th>Editar</th>
+					<th>Remover</th>
 				</tr>
-		</thead>
-		<tbody>
-				
+			</thead>
+			<tbody>
+
 				<tr th:each="umaPessoa: ${todasAsPessoas}">
-				<td th:text="${umaPessoa.id}"></td>
-				<td th:text="${umaPessoa.nome}"></td>
-				<td><a th:href="'mailto:'+${umaPessoa.email}" th:text="${umaPessoa.email}"></a></td>
-				<td th:text="${#temporals.formatumaPessoa.dataNascimento, 'dd/MM/yyyy')}"></td>
-				<td	><a th:text="${umaPessoa.genero}"></a></td>
-				<td><a th:href="@{/editar/{id}(id=${umaPessoa.id})}">Editar</a></td>
-				<td><a th:href="@{/remover/{id}(id=${umaPessoa.id})}">Remover</a></td>
+					<td th:text="${umaPessoa.id}"></td>
+					<td th:text="${umaPessoa.nome}"></td>
+					<td><a th:href="'mailto:'+${umaPessoa.email}" th:text="${umaPessoa.email}"></a></td>
+					<td th:text="${#temporals.formatumaPessoa.dataNascimento, 'dd/MM/yyyy')}"></td>
+					<td><a th:text="${umaPessoa.genero}"></a></td>
+					<td><a th:href="@{/editar/{id}(id=${umaPessoa.id})}">Editar</a></td>
+					<td><a th:href="@{/remover/{id}(id=${umaPessoa.id})}">Remover</a></td>
 				</tr>
 			</tbody>
-		</table>	
+		</table>
 	</div>
 </body>
