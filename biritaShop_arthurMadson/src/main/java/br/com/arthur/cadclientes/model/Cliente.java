@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "clientes")
-public class cliente implements Serializable {
+public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 8128389568127787766L;
 
