@@ -27,11 +27,21 @@ public class Cliente implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
+	
+	private Long codigo;
 	private String nome;
+	private String apelido;
+	private String endereco;
+	private String bairro;
+	private String municipio;
+	private String telefone;
 	private String email;
-	private String genero;
+	private String cnpjcpf;
+	private String cep;
+	private String estado;
+	private String celular;
+	private String grupo;
+	private String situacao;
 
 	@Column(nullable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

@@ -36,14 +36,14 @@ public class ClienteController {
 		return modelAndView;
 	}
 
-	@GetMapping("/adicionarcliente")
+	@GetMapping("/inserircliente")
 	public ModelAndView formAdicionarcliente() {
 		ModelAndView modelAndView = new ModelAndView("adicionarcliente");
 		modelAndView.addObject(new Cliente());
 		return modelAndView;
 	}
 
-	@PostMapping("/adicionarcliente")
+	@PostMapping("/inserircliente")
 	public String adicionarcliente(Cliente p) {
 		this.clienteRepo.save(p);
 		return "redirect:/listarclientes";
