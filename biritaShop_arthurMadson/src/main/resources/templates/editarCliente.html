@@ -24,7 +24,7 @@
 	</div>
 	<div style="padding:0 16px;">
 		<h1>Formulário para edição de clientes:</h1>
-		<form action="#" th:action="@{/editar/{id}(id=${cliente.id})}" th:object="${cliente}" method="POST">
+		<form action="#" th:action="@{/editar/{id}(id=${cliente.id})}" th:object="${cliente.java}" method="POST">
 			<div class="grid">
 
 				<label for="cod"> CODIGO:<input type="text" value="codigo" th:field="*{codigo}" required /> </label>

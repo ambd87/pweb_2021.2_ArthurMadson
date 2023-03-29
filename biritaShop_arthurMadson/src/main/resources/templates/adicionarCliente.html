@@ -26,7 +26,7 @@
 
 	<div style="padding:0 16px;">
 		<h1>Formulário para cadastro de clientes:</h1>
-		<form method="POST" th:object="${cliente}" th:action="@{/adicionarcliente}">
+		<form method="POST" th:object="${cliente.java}" th:action="@{/adicionarcliente}">
 			
 				
 			<label for="cod"> CODIGO:<input type="text" value="codigo" th:field="*{codigo}" required /> </label>

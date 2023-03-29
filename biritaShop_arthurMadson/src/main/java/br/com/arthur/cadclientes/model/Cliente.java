@@ -43,8 +43,6 @@ public class Cliente implements Serializable {
 	private String grupo;
 	private String situacao;
 
-	@Column(nullable = false)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate dataNascimento;
+	
 
 }
