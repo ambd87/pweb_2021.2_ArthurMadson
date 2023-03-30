@@ -28,7 +28,7 @@ public class ClienteController {
 		return "index.html";
 	}
 
-	@GetMapping("/listarclientes")
+	@GetMapping("/listarClientes")
 	public ModelAndView listarclientes() {
 		List<Cliente> todasAsclientes = clienteRepo.findAll();
 		ModelAndView modelAndView = new ModelAndView("listarclientes");
@@ -36,20 +36,20 @@ public class ClienteController {
 		return modelAndView;
 	}
 
-	@GetMapping("/adicionarcliente")
+	@GetMapping("/adicionarCliente")
 	public ModelAndView formAdicionarcliente() {
 		ModelAndView modelAndView = new ModelAndView("adicionarcliente");
 		modelAndView.addObject(new Cliente());
 		return modelAndView;
 	}
 
-	@PostMapping("/adicionarcliente")
+	@PostMapping("/adicionarCliente")
 	public String adicionarcliente(Cliente p) {
 		this.clienteRepo.save(p);
 		return "redirect:/listarclientes";
 	}
 
-	@GetMapping("/editar/{id}")
+	@GetMapping("/editarCliente/{id}")
 	public ModelAndView formEditarcliente(@PathVariable("id") long id) {
 		Cliente cliente = clienteRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 
@@ -58,13 +58,13 @@ public class ClienteController {
 		return modelAndView;
 	}
 
-	@PostMapping("/editar/{id}")
+	@PostMapping("/editaCliente/{id}")
 	public ModelAndView editarcliente(@PathVariable("id") long id, Cliente cliente) {
 		clienteRepo.save(cliente);
 		return new ModelAndView("redirect:/listarclientes");
 	}
 
-	@GetMapping("/remover/{id}")
+	@GetMapping("/removerCliente/{id}")
 	public ModelAndView removercliente(@PathVariable("id") long id) {
 		Cliente aRemover = clienteRepo.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
