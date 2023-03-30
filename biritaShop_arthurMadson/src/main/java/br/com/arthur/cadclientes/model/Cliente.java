@@ -23,7 +23,7 @@ public class Cliente implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+
 	private Long codigo;
 	private String nome;
 	private String apelido;
@@ -38,7 +38,5 @@ public class Cliente implements Serializable {
 	private String celular;
 	private String grupo;
 	private String situacao;
-
-	
 
 }

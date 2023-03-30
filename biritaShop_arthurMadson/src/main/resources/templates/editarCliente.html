@@ -29,53 +29,62 @@
 
 				<label for="cod"> CODIGO:<input type="text" value="codigo" th:field="*{codigo}" required /> </label>
 				<label for="nom"> NOME: <input type="text" value="nome" th:field="*{nome}" required /></label>
-				<label for="apelid"> APELIDO: <input type="text" value="apelido" th:field="*{apelido}" required /> </label>
-				<label for="enderec"> ENDERECO: <input type="text" value="endereco" th:field="*{endereco}" required /></label>
+				<label for="apelid"> APELIDO: <input type="text" value="apelido" th:field="*{apelido}" required />
+				</label>
+				<label for="enderec"> ENDERECO: <input type="text" value="endereco" th:field="*{endereco}"
+						required /></label>
 				<label for="bairr"> BAIRRO: <input type="text" value="bairro" th:field="*{bairro}" required /></label>
-				<label for="municipi"> MUNICIPIO: <input type="text" value="municipio" th:field="*{municipio}" required /></label>
-				<label for="telefon"> TELEFONE: <input type="tel" value="telefone" th:field="*{telefone} /^+84(7\d|8\d|9\d)\d{9}$/" required /></label>
-				<label for="enderec"> ENDERECO: <input type="text" value="endereco" th:field="*{endereco}" required /></label>
-				<label for="emai"> E_EMAIL: <input type="email" value="email" th:field="*{email} pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"" required /></label>
-				<label for="cnpjcp"> CNPJ/CPF: <input type="text" value="cnpj/cpf" th:field="*{cnpj/cpf}" required /></label>
+				<label for="municipi"> MUNICIPIO: <input type="text" value="municipio" th:field="*{municipio}"
+						required /></label>
+				<label for="telefon"> TELEFONE: <input type="tel" value="telefone"
+						th:field="*{telefone} /^+84(7\d|8\d|9\d)\d{9}$/" required /></label>
+				<label for="enderec"> ENDERECO: <input type="text" value="endereco" th:field="*{endereco}"
+						required /></label>
+				<label for="emai"> E_EMAIL: <input type="email" value="email" th:field="*{email} pattern="
+						/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"" required /></label>
+				<label for="cnpjcp"> CNPJ/CPF: <input type="text" value="cnpj/cpf" th:field="*{cnpj/cpf}"
+						required /></label>
 				<label for="cepi"> CEP: <input type="text" value="cep" th:field="*{cep}" required /></label>
 				<label for="estad"> ESTADO:
-				<select id="estado" name="estado">
-					<option value="AC">Acre</option>
-					<option value="AL">Alagoas</option>
-					<option value="AP">Amapá</option>
-					<option value="AM">Amazonas</option>
-					<option value="BA">Bahia</option>
-					<option value="CE">Ceará</option>
-					<option value="DF">Distrito Federal</option>
-					<option value="ES">Espírito Santo</option>
-					<option value="GO">Goiás</option>
-					<option value="MA">Maranhão</option>
-					<option value="MT">Mato Grosso</option>
-					<option value="MS">Mato Grosso do Sul</option>
-					<option value="MG">Minas Gerais</option>
-					<option value="PA">Pará</option>
-					<option value="PB">Paraíba</option>
-					<option value="PR">Paraná</option>
-					<option value="PE">Pernambuco</option>
-					<option value="PI">Piauí</option>
-					<option value="RJ">Rio de Janeiro</option>
-					<option value="RN">Rio Grande do Norte</option>
-					<option value="RS">Rio Grande do Sul</option>
-					<option value="RO">Rondônia</option>
-					<option value="RR">Roraima</option>
-					<option value="SC">Santa Catarina</option>
-					<option value="SP">São Paulo</option>
-					<option value="SE">Sergipe</option>
-					<option value="TO">Tocantins</option>
-					<option value="EX">Estrangeiro</option>
-				</select>
+					<select id="estado" name="estado">
+						<option value="AC">Acre</option>
+						<option value="AL">Alagoas</option>
+						<option value="AP">Amapá</option>
+						<option value="AM">Amazonas</option>
+						<option value="BA">Bahia</option>
+						<option value="CE">Ceará</option>
+						<option value="DF">Distrito Federal</option>
+						<option value="ES">Espírito Santo</option>
+						<option value="GO">Goiás</option>
+						<option value="MA">Maranhão</option>
+						<option value="MT">Mato Grosso</option>
+						<option value="MS">Mato Grosso do Sul</option>
+						<option value="MG">Minas Gerais</option>
+						<option value="PA">Pará</option>
+						<option value="PB">Paraíba</option>
+						<option value="PR">Paraná</option>
+						<option value="PE">Pernambuco</option>
+						<option value="PI">Piauí</option>
+						<option value="RJ">Rio de Janeiro</option>
+						<option value="RN">Rio Grande do Norte</option>
+						<option value="RS">Rio Grande do Sul</option>
+						<option value="RO">Rondônia</option>
+						<option value="RR">Roraima</option>
+						<option value="SC">Santa Catarina</option>
+						<option value="SP">São Paulo</option>
+						<option value="SE">Sergipe</option>
+						<option value="TO">Tocantins</option>
+						<option value="EX">Estrangeiro</option>
+					</select>
 				</label>
-				<label for="celula"> CELULAR: <input type="text" value="celular" th:field="*{celular}" required /></label>
+				<label for="celula"> CELULAR: <input type="text" value="celular" th:field="*{celular}"
+						required /></label>
 				<label for="grup"> GRUPO: <input type="text" value="grupo" th:field="*{grupo}" required /></label>
-				<label for="situaca"> SITUACAO: <input type="text" value="situacao" th:field="*{situcao}" required /></label>
-			
+				<label for="situaca"> SITUACAO: <input type="text" value="situacao" th:field="*{situcao}"
+						required /></label>
+
 			</div>
-		
+
 			<div class="grid">
 				<div><button type="submit">Editar!</button></div>
 				<div><button type="reset" class="secondary">Limpar</button></div>
