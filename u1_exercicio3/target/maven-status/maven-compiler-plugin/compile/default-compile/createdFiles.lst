@@ -1,0 +1,4 @@
+br\com\arthur\cadpessoas\model\Pessoa.class
+br\com\arthur\cadpessoas\controllers\PessoaController.class
+br\com\arthur\cadpessoas\CadpessoasApplication.class
+br\com\arthur\cadpessoas\repositories\PessoaRepository.class

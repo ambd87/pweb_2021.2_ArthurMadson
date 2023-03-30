@@ -16,8 +16,8 @@
 <body>
 	<div class="w3-bar w3-black w3-xlarge">
 		<a href="/" class="w3-bar-item w3-button w3-mobile">Início</a>
-		<a href="/adicionarcliente" class="w3-bar-item w3-button">Adicionar cliente</a>
-		<a href="/listarclientes" class="w3-bar-item w3-button w3-mobile">Listar clientes</a>
+		<a href="/adicionarCliente" class="w3-bar-item w3-button">Adicionar cliente</a>
+		<a href="/listarClientes" class="w3-bar-item w3-button w3-mobile">Listar clientes</a>
 		<a href="/public/noticias.html" class="w3-bar-item w3-button w3-mobile w3-right">Notícias</a>
 		<a href="/public/sobre.html" class="w3-bar-item w3-button w3-mobile w3-right">Sobre o site</a>
 		<a href="/public/contato.html" class="w3-bar-item w3-button w3-mobile w3-right">Contato</a>
@@ -26,21 +26,26 @@
 
 	<div style="padding:0 16px;">
 		<h1>Formulário para cadastro de clientes:</h1>
-		<form method="POST" th:object="${cliente.java}" th:action="@{/adicionarcliente}">
-			
-				
+		<form method="POST" th:object="${cliente}" th:action="@{/adicionarcliente}">
+
+
 			<label for="cod"> CODIGO:<input type="text" value="codigo" th:field="*{codigo}" required /> </label>
 			<label for="nom"> NOME: <input type="text" value="nome" th:field="*{nome}" required /></label>
 			<label for="apelid"> APELIDO: <input type="text" value="apelido" th:field="*{apelido}" required /> </label>
-			<label for="enderec"> ENDERECO: <input type="text" value="endereco" th:field="*{endereco}" required /></label>
+			<label for="enderec"> ENDERECO: <input type="text" value="endereco" th:field="*{endereco}"
+					required /></label>
 			<label for="bairr"> BAIRRO: <input type="text" value="bairro" th:field="*{bairro}" required /></label>
-			<label for="municipi"> MUNICIPIO: <input type="text" value="municipio" th:field="*{municipio}" required /></label>
-			<label for="telefon"> TELEFONE: <input type="tel" value="telefone" th:field="*{telefone} /^+84(7\d|8\d|9\d)\d{9}$/" required /></label>
-			<label for="enderec"> ENDERECO: <input type="text" value="endereco" th:field="*{endereco}" required /></label>
-			<label for="emai"> E_EMAIL: <input type="email" value="email" th:field="*{email} pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"" required /></label>
-			<label for="cnpjcp"> CNPJ/CPF: <input type="text" value="cnpj/cpf" th:field="*{cnpj/cpf}" required /></label>
-			<label for="cepi"> CEP: <input type="text" value="cep" th:field="*{cep}" required /></label>
-			<label for="estad"> ESTADO:
+			<label for="municipi"> MUNICIPIO: <input type="text" value="municipio" th:field="*{municipio}"
+					required /></label>
+			<label for="telefon"> TELEFONE: <input type="tel" value="telefone"
+					th:field="*{telefone} /^+84(7\d|8\d|9\d)\d{9}$/" required /></label>
+			<label for="endereco"> ENDERECO: <input type="text" value="endereco" th:field="*{endereco}"
+					required /></label>
+			<label for="email"> E_EMAIL: <input type="email" value="email" th:field="*{email} pattern="
+					/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"" required /></label>
+			<label for="cnpj"> CNPJ/CPF: <input type="text" value="cnpj/cpf" th:field="*{cnpj/cpf}" required /></label>
+			<label for="cep"> CEP: <input type="text" value="cep" th:field="*{cep}" required /></label>
+			<label for="estado"> ESTADO:
 				<select id="estado" name="estado">
 					<option value="AC">Acre</option>
 					<option value="AL">Alagoas</option>
@@ -71,10 +76,11 @@
 					<option value="TO">Tocantins</option>
 					<option value="EX">Estrangeiro</option>
 				</select>
-				</label>
+			</label>
 			<label for="celula"> CELULAR: <input type="text" value="celular" th:field="*{celular}" required /></label>
 			<label for="grup"> GRUPO: <input type="text" value="grupo" th:field="*{grupo}" required /></label>
-			<label for="situaca"> SITUACAO: <input type="text" value="situacao" th:field="*{situcao}" required /></label>
+			<label for="situaca"> SITUACAO: <input type="text" value="situacao" th:field="*{situcao}"
+					required /></label>
 
 
 			<div class="grid">
